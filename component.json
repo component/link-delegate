@@ -1,0 +1,17 @@
+{
+  "name": "link-delegate",
+  "repo": "component/link-delegate",
+  "description": "Anchor tag click delegation / negotiation for client-side routing",
+  "version": "0.0.1",
+  "keywords": ["link", "delegate", "route", "routing", "router"],
+  "dependencies": {
+    "component/delegate": "*",
+    "component/url": "*"
+  },
+  "development": {},
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": [
+    "index.js"
+  ]
+}
