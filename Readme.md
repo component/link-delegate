@@ -23,9 +23,8 @@
 var link = require('link-delegate');
 
 link(function(e){
-  e.preventDefault();
-
   // perform your routing here
+  e.preventDefault();
   console.log(e.target.href);
 });
 ```
