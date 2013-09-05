@@ -5,8 +5,9 @@
   "version": "0.0.1",
   "keywords": ["link", "delegate", "route", "routing", "router"],
   "dependencies": {
-    "component/delegate": "*",
-    "component/url": "*"
+    "component/url": "*",
+    "component/event": "*",
+    "discore/closest": "*"
   },
   "development": {},
   "license": "MIT",
