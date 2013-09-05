@@ -3,12 +3,13 @@
  * Module dependencies.
  */
 
-var delegate = require('delegate');
 var url = require('url');
+var event = require('event');
+var closest = require('closest');
 
 /**
  * Handle link delegation on `el` or the document,
- * and invoke `fn(e)` when clickable.
+ * and invoke `fn(e, anchor)` when clickable.
  *
  * @param {Element|Function} el or fn
  * @param {Function} [fn]
@@ -22,8 +23,11 @@ module.exports = function(el, fn){
     el = document;
   }
 
-  delegate.bind(el, 'a', 'click', function(e){
-    if (clickable(e)) fn(e);
+  event.bind(el, 'click', function(e){
+    if (clickable(e)) {
+      var a = closest(e.target, 'a', true);
+      if (a && !a.target && !url.isCrossDomain(a.href)) fn(e, a);
+    }
   });
 };
 
@@ -35,16 +39,6 @@ function clickable(e) {
   if (1 != which(e)) return;
   if (e.metaKey || e.ctrlKey || e.shiftKey) return;
   if (e.defaultPrevented) return;
-
-  // target
-  var el = e.target;
-
-  // check target
-  if (el.target) return;
-
-  // x-origin
-  if (url.isCrossDomain(el.href)) return;
-
   return true;
 }
 

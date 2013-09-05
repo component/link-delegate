@@ -7,15 +7,20 @@
 
   <ul>
     <li><a href="foo">foo</a></li>
+    <li><a href="foo" target="_blank">foo in blank</a></li>
     <li><a href="http://google.com">http://google.com</a></li>
+    <li><a href="kitten"><div><img src="kitten.jpg"></div></a></li>
+    <li><a href="kitten" target="_blank"><div><img src="kitten-b.jpg"></div></a></li>
+    <li><a href="http://google.com"><img src="kitten-x.jpg"></a></li>
   </ul>
 
   <script>
     var link = require('link-delegate');
 
-    link(function(e){
+    link(function(e, a){
       e.preventDefault();
-      console.log(e.target.href);
+      console.log(e);
+      console.log(a.href);
     });
   </script>
 </body>
