@@ -43,7 +43,7 @@ function clickable(e) {
   if (el.target) return;
 
   // x-origin
-  if (url.isCrossDomain(el.href)) return;
+  if (url.isCrossDomain(el.getAttribute('href'))) return;
 
   return true;
 }
