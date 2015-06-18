@@ -1,11 +1,12 @@
 {
   "name": "link-delegate",
   "version": "0.0.1",
+  "repository": "component/link-delegate",
   "dependencies": {
     "component-delegate": "*",
     "component-url": "*"
   },
-  "browser:" {
+  "browser": {
     "delegate": "component-delegate",
     "url": "component-url"
   }
