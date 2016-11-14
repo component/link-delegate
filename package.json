@@ -1,6 +1,6 @@
 {
   "name": "link-delegate",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "repository": "component/link-delegate",
   "dependencies": {
     "component-delegate": "*",

@@ -2,7 +2,7 @@
   "name": "link-delegate",
   "repo": "component/link-delegate",
   "description": "Anchor tag click delegation / negotiation for client-side routing",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "keywords": ["link", "delegate", "route", "routing", "router"],
   "dependencies": {
     "component/delegate": "*",
