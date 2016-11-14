@@ -22,9 +22,13 @@ module.exports = function(el, fn){
     el = document;
   }
 
-  delegate.bind(el, 'a', 'click', function(e){
+  var token = delegate.bind(el, 'a', 'click', function(e){
     if (clickable(e)) fn(e);
   });
+
+  return function(){
+    delegate.unbind(el, 'click', token);
+  };
 };
 
 /**
