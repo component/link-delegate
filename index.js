@@ -15,18 +15,18 @@ var url = require('url');
  * @api public
  */
 
-module.exports = function(el, fn){
+module.exports = (el, fn) => {
   // default to document
   if ('function' == typeof el) {
     fn = el;
     el = document;
   }
 
-  var token = delegate.bind(el, 'a', 'click', function(e){
+  var token = delegate.bind(el, 'a', 'click', e => {
     if (clickable(e)) fn(e);
   });
 
-  return function(){
+  return () => {
     delegate.unbind(el, 'click', token);
   };
 };
